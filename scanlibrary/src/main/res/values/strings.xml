@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Procesamiento de imagen</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Configuración</string>
+    <string name="scanning">Procesando...</string>
+    <string name="done">Guardar</string>
+    <string name="scan">Procesar</string>
+    <string name="cantCrop">No es posible procesar la imagen, ordene los puntos</string>
+    <string name="ok">Ok</string>
+</resources>
