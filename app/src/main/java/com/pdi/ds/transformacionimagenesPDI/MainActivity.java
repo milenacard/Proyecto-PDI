@@ -1,9 +1,8 @@
-package com.pdi.ds.pditranformacionperspectiva;
+package com.pdi.ds.transformacionimagenesPDI;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
@@ -14,10 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.scanlibrary.ScanActivity;
 import com.scanlibrary.ScanConstants;
-
 import java.io.IOException;
 
 
@@ -25,9 +22,7 @@ public class MainActivity extends ActionBarActivity {
 
     private static final int REQUEST_CODE = 99;
     private Button scanButton;
-    private Button cameraButton;
     private Button mediaButton;
-    private ImageView scannedImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +30,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         scanButton = (Button) findViewById(R.id.scanButton);
         scanButton.setOnClickListener(new ScanButtonClickListener());
-        //cameraButton = (Button) findViewById(R.id.cameraButton);
-        //cameraButton.setOnClickListener(new ScanButtonClickListener(ScanConstants.OPEN_CAMERA));
         mediaButton = (Button) findViewById(R.id.mediaButton);
         mediaButton.setOnClickListener(new ScanButtonClickListener(ScanConstants.OPEN_MEDIA));
-       // scannedImageView = (ImageView) findViewById(R.id.scannedImage);
     }
 
     private class ScanButtonClickListener implements View.OnClickListener {
@@ -75,7 +67,7 @@ public class MainActivity extends ActionBarActivity {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                // getContentResolver().delete(uri, null, null);
                // scannedImageView.setImageBitmap(bitmap);
-                Toast.makeText(this,"Imagen almacenada correctamente",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"La imagen se ha almacenado correctamente",Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -92,12 +84,8 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }

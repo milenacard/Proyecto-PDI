@@ -1,4 +1,4 @@
-package com.pdi.ds.pditranformacionperspectiva;
+package com.pdi.ds.transformacionimagenesPDI;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
